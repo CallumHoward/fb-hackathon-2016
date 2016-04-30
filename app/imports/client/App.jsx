@@ -20,8 +20,10 @@ export default class App extends Component {
 
   onButtonClick() {
     HTTP.post(
-      'https://graph.facebook.com/v2.6/856086361161946/live_videos', 
-      {},
+      'https://graph.facebook.com/v2.6/590615017770118/live_videos', 
+      { params: 
+        { access_token: '' }
+      },
       function(err, res) {
         console.log(res);
       }
