@@ -75,7 +75,9 @@ export default class App extends Component {
           </li>
         </ul>
 
-        <button onClick={this.onButtonClick.bind(this)}>Button</button>
+        <div style={{textAlign: 'center', width: '100%'}}>
+          <button onClick={this.onButtonClick.bind(this)}>Start my Stream</button>
+        </div>
       </div>
     );
   }

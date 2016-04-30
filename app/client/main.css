@@ -119,6 +119,17 @@ header .hide-completed {
   margin-left: 5px;
 }
 
+button {
+  display: inline-block;
+  font-size: 24px;
+  width: 200px;
+  border-radius: 0;
+  border: 0;
+  background-color: #616161;
+  font-family: 'Noto Sans';
+  color: white;
+}
+
 @media (max-width: 600px) {
   li {
     padding: 12px 15px;
