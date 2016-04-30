@@ -4,9 +4,6 @@ import json
 
 filepath = '/Users/callumhoward/Library/Application Support/obs-studio/plugin_config/rtmp-services/services.json'
 
-
-services = {}
-
 with open(filepath) as f:
     out = json.load(f)
 
@@ -26,11 +23,6 @@ fb_live_data = '''
     }
 }
 '''
-
-
-out['services'].append(fb_live_data)
-
-#print out['services'][-1]
 
 with open(filepath, 'w') as f:
     json.dump(out, f)
