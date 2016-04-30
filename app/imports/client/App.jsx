@@ -7,24 +7,19 @@ import Task from './Task.jsx';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { streamToken: '', viewUrl: '' };
+    this.state = { streamToken: '', viewUrl: '', showInfo: false };
   }
 
-  getTasks() {
-    return [
-      { _id: 1, text: 'Stream token' },
-      { _id: 2, text: 'URL' },
-    ];
-  }
+  componentDidMount() {
+    const secrets = Secrets.findOne({});
+    let accessToken = undefined;
 
-  renderTasks() {
-    return this.getTasks().map((task) => (
-      <Task key={task._id} task={task} />
-    ));
-  }
+    if (secrets) {
+      accessToken = secrets.accessToken;
+    } else {
+      accessToken = "";
+    }
 
-  onButtonClick() {
-    const accessToken = Secrets.findOne({}).accessToken;
     HTTP.post(
       'https://graph.facebook.com/v2.6/856086361161946/live_videos', 
       { params: 
@@ -53,11 +48,21 @@ export default class App extends Component {
     );
   }
 
+  renderTasks() {
+    return this.getTasks().map((task) => (
+      <Task key={task._id} task={task} />
+    ));
+  }
+
+  onButtonClick() {
+    this.setState({ showInfo: true });
+  }
+
   render() {
     return (
       <div className="container">
         <header>
-          <h1>Streamline <small>powered by Facebook Live</small></h1>
+          <img width="400px" src="/streamline-logo.png"/>
         </header>
 
         <ul>
@@ -70,13 +75,13 @@ export default class App extends Component {
           <li>
             <span style={{width: '140px', display: 'inline-block', textAlign: 'right'}}>URL:</span>
             <input className="text" type="text" 
-              value={this.state.viewUrl} readonly="true"
+              value={this.state.showInfo ? this.state.viewUrl : ''} readonly="true"
             />
           </li>
         </ul>
 
         <div style={{textAlign: 'center', width: '100%'}}>
-          <button onClick={this.onButtonClick.bind(this)}>Start my Stream</button>
+          <button onClick={this.onButtonClick.bind(this)}>Start Stream</button>
         </div>
       </div>
     );
