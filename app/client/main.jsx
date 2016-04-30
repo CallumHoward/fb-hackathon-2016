@@ -8,10 +8,7 @@ import App from '../imports/client/App.jsx';
 FlowRouter.route('/fbapp', {
   name: 'fbapp',
   action(params) {
-    mount(SplashScreen);
-    Meteor.setTimeout(() => {
-      mount(App);
-    }, 500);
+    mount(App);
   }
 });
 
