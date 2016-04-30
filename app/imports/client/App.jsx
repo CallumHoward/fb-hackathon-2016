@@ -21,7 +21,7 @@ export default class App extends Component {
     return (
       <div className="container">
         <header>
-          <h1>Streamline</h1>
+          <h1>Streamline <small>powered by Facebook Live</small></h1>
         </header>
 
         <ul>

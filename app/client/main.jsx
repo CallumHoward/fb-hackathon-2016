@@ -14,8 +14,8 @@ FlowRouter.route('/fbapp', {
 
 Meteor.startup(() => {
   // Font Noto Sans
-   WebFontConfig = {
-    google: { families: [ 'Noto+Sans::latin' ] }
+  WebFontConfig = {
+    google: { families: [ 'Noto+Sans:400,400italic:latin' ] }
   };
   (function() {
     var wf = document.createElement('script');
