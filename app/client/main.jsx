@@ -5,8 +5,8 @@ import { mount } from 'react-mounter';
 
 import App from '../imports/client/App.jsx';
 
-FlowRouter.route('/post', {
-  name: 'post',
+FlowRouter.route('/fbapp', {
+  name: 'fbapp',
   action(params) {
     mount(App);
   }
