@@ -22,3 +22,4 @@ static-html
 meteorhacks:picker
 kadira:flow-router
 react-meteor-data
+http

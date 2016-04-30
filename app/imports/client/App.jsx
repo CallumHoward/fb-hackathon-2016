@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HTTP } from 'meteor/meteor';
+import { HTTP } from 'meteor/http';
 
 import Task from './Task.jsx';
 
