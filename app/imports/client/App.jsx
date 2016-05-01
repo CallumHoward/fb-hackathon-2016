@@ -81,6 +81,15 @@ export default class App extends Component {
         </ul>
 
         <div style={{textAlign: 'center', width: '100%'}}>
+            <div className={"fb-like"}
+              data-href={this.state.viewUrl} 
+              data-width="300px" data-layout="standard" 
+              data-action="like" data-show-faces="true" 
+              style={{display: this.state.showInfo ? 'block' : 'none'}}
+              data-share="true">
+            </div>
+        </div>
+        <div style={{textAlign: 'center', width: '100%'}}>
           <button onClick={this.onButtonClick.bind(this)}>Start Stream</button>
         </div>
       </div>
